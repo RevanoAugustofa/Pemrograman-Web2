@@ -252,9 +252,41 @@ echo $tampil->tampilkanData();
 ```
 ### <i>Hasil Output:</i>
 ![alt text](image-1.png)
+________________
 
+### <u> TUGAS </u>
 
+### <i>Full Code :</i>
 
+jika dalam pengaplikasiannya akan tampak seperti ini.
+```php
+<?php
+
+//definisi kelas
+class Dosen {
+    //atribut atau properti
+    public $nama;
+    public $nip;
+    public $mataKuliah;
+
+    //constructor
+    public function __construct($nama,$nip,$mataKuliah){
+        $this->nama = $nama;
+        $this->nip = $nip;
+        $this->mataKuliah = $mataKuliah;
+    }
+    //method fungsi tampil dosen
+    public function tampilkanDosen(){
+        return "Nama Dosen: $this->nama <br> NIP: $this->nip<br> Matakuliah : $this->mataKuliah";
+    }
+}
+
+//membuat objek dan menampilkannya
+$tampil =new Dosen("Revano","238282298","Matematika");
+echo $tampil->tampilkanDosen();
+```
+### <i style="background: blue">Hasil Output:</i>
+![alt text](image-2.png)
 ## Jobsheet 2
 
 ## Jobsheet 3
