@@ -28,7 +28,7 @@
   - public ```$nip```: atribut untuk menyimpan Nomor Induk Pegawai (NIP), yang juga dapat diakses dari luar kelas.
   - public ```$mataKuliah```: atribut untuk menyimpan mata kuliah, yang dapat diakses dari luar kelas.
 
-  **<u>2. Pembuatan Metode </u>**
+**<u>2. Pembuatan Metode </u>**
   ```php
   class Dosen {
       ...
@@ -54,7 +54,7 @@
 
   - Metode ini mengembalikan string yang berisi informasi lengkap tentang dosen. String ini mencakup nama, NIP, dan mata kuliah dosen.
 
-  **<u>3. Pembuatan Objek </u>**
+**<u>3. Pembuatan Objek </u>**
   ```php
   <?php
   
@@ -106,5 +106,5 @@
   //menampilkan /mencetak data dosen
   echo $tampil->tampilkanDosen();
   ```
-  **<u>4. Output </u>**
+**<u>4. Output </u>**
   ![alt text](/src/img/tugas1-2.png)
