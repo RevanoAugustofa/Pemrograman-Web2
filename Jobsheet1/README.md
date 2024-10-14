@@ -48,11 +48,14 @@
   ```
 
 - Constructor:
-  - Metode __construct() dipanggil ketika objek baru dari kelas Dosen dibuat. Metode ini menerima tiga parameter (```$nama```, ```$nip```, dan ```$mataKuliah```) dan menginisialisasi atribut kelas dengan nilai yang diberikan.
+  - Constructor adalah metode khusus yang dipanggil saat objek dari kelas dibuat.
+  - Dalam constructor ini, kita menerima tiga parameter: ```$nama```, ```$nip```, dan ```$mataKuliah```.
+  - Kata kunci ```$this``` digunakan untuk merujuk ke objek saat ini. Kita menginisialisasi atribut kelas dengan nilai yang diberikan saat objek dibuat.
+  
 
 - Method ```tampilkanDosen( )```:
-
-  - Metode ini mengembalikan string yang berisi informasi lengkap tentang dosen. String ini mencakup nama, NIP, dan mata kuliah dosen.
+  - Metode ini mengembalikan string yang berisi informasi lengkap tentang dosen.
+  - Dengan menggunakan interpolasi string, kita menyusun informasi tentang dosen dengan menyertakan nilai dari atribut ```$nama```, ```$nip```, dan ```$mataKuliah```.
 
 **<u>3. Pembuatan Objek </u>**
   ```php
@@ -72,10 +75,13 @@
   
   ```
 - Instansiasi Objek:
-  - Objek Dosen baru diciptakan dengan nama "Revano", NIP 238282298, dan mata kuliah "Matematika". Ini adalah data awal dari dosen.
+  - membuat objek baru dari kelas Dosen dengan nama "Revano", NIP 238282298, dan mata kuliah "Matematika". Ini adalah data awal dari dosen
+  - Objek ini disimpan dalam variabel ```$tampil```.
 
 - Menampilkan Data Dosen:
-  - Output menampilkan informasi dari objek dosen dengan memanggil metode tampilkanDosen(). Hasilnya adalah string yang menunjukkan informasi dosen.
+  - Dengan menggunakan objek ```$tampil```,dengan memanggil metode ```tampilkanDosen()``` untuk mendapatkan string informasi tentang dosen.
+  - Hasil dari metode ini akan ditampilkan menggunakan ```echo```, yang akan mencetak informasi dosen ke layar.
+
   ### <i>Full Code :</i>
   
   jika dalam pengaplikasiannya akan tampak seperti ini.
