@@ -89,7 +89,7 @@
       public $nip;
       public $mataKuliah;
   
-      //constructor
+      // constructor
       public function __construct($nama,$nip,$mataKuliah){
           $this->nama = $nama;
           $this->nip = $nip;
