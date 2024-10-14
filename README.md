@@ -153,28 +153,10 @@ $tampil->updateJurusan("Teknik Mesin");
 <?php 
 //Definisi kelas mahasiswa
 class Mahasiswa {
-    //Atribut atau Properti
-    public $nama;
-    public $nim;
-    public $jurusan;
-
-    //constructor
-    public function __construct($nama, $nim, $jurusan){
-        $this->nama = $nama;
-        $this->nim = $nim;
-        $this->jurusan = $jurusan;
-    }
-
-    //Method fungsi tampil data
-    public function tampilkanData(){
-         return "Hai Nama Saya : $this->nama.<br> Npm saya : $this->nim.<br> Jurusan : $this->jurusan ";
-    }
-
-    //Method update jurusan
-    public function updateJurusan($jurusan){
-        $this->jurusan = $jurusan;
-    }
-
+   ...
+   ...
+   ...
+   ...
     //Method setNim
     public function setNim($nim){
         $this->nim = $nim;
@@ -182,19 +164,49 @@ class Mahasiswa {
 }
 
 //membuat objek dan menampilkannya
+
+//data awal
 echo "<u>Data Awal</u><br>";
 $tampil = new Mahasiswa ("Revano Augustofa",230102071,"Teknik Informatika");
-echo $tampil->tampilkanData();
+
 echo "<br><br>";
+
+//perbaharui isi data jurusan
 echo "<u>Data yang sudah diperbarui</u><br>";
 $tampil->updateJurusan("Teknik Mesin");
+
+//mengubah nilai atribut nim
 $tampil->setNim("230102088");
-echo $tampil->tampilkanData();
+
 
 
 ```
 - Tampilkan data mahasiswa yang sudah diperbarui dengan memanggil metode
 tampilkanData().
+
+```php
+<?php 
+//Definisi kelas mahasiswa
+class Mahasiswa {
+   ...
+   ...
+   ...
+   ...
+   ...
+}
+
+//membuat objek dan menampilkannya
+    ...
+    ...
+//menampilkan semua data awal
+echo $tampil->tampilkanData();
+echo "<br><br>";
+    ...
+    ...
+//menampilkan semua data yang sudah di perbaharui
+echo $tampil->tampilkanData();
+
+```
 
 
 ***Full Code :***
@@ -241,9 +253,10 @@ $tampil = new Mahasiswa ("Revano Augustofa",230102071,"Teknik Informatika");
 echo $tampil->tampilkanData();
 echo "<br><br>";
 
-//perbaharui isi data jurusan dan nim
+//perbaharui isi data jurusan
 echo "<u>Data yang sudah diperbarui</u><br>";
 $tampil->updateJurusan("Teknik Mesin");
+//mengubah nilai atribut nim
 $tampil->setNim("230102088");
 //menampilkan semua data yang sudah di perbaharui
 echo $tampil->tampilkanData();
@@ -251,7 +264,7 @@ echo $tampil->tampilkanData();
 ```
 
 ***Hasil Output :***
-![alt text](image.png)
+
 
 
 
