@@ -59,7 +59,7 @@ echo $mahasiswa1->tampilkanData();
 ```
 
 <b><h3>Hasil Output:</h3></b>
-![alt text](/img/image.png)
+![alt text](/src/img/classobject3-4.png)
 
 # 2. Encaptulation <i>(pembungkusan)</i>
 
@@ -133,7 +133,7 @@ echo "Jurusan: " . $mahasiswa1->getJurusan() . "<br>";
 ?>
 ```
 ### Hasil Output:
-![alt text](/img/image-3.png)
+![alt text](/src/img/encaptulation3-4.png)
 
 
 
@@ -182,7 +182,7 @@ echo "Mata Kuliah: " . $dosen1->getMataKuliah() . "<br>";
 
 ```
 ### Hasil Output:
-![alt text](/img/image-2.png)
+![alt text](/src/img/inheritance3-4.png)
 
 # 4. polymorphism
 ```php
@@ -275,6 +275,6 @@ $dosen1->aksesFitur();
 ```
 ### Hasil Output:
 
-![alt text](/img/image-1.png)
+![alt text](/src/img/polymorphism3-4.png)
 
 # 5. Abstraction
