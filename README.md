@@ -263,8 +263,7 @@ $tampil->setNim("230102088");
 echo $tampil->tampilkanData();
 
 ```
-
-***Hasil Output :***
+### <i>Hasil Output:</i>
 ![alt text](image-1.png)
 
 
