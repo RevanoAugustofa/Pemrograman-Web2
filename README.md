@@ -81,18 +81,11 @@ class Mahasiswa {
         $this->nim = $nim;
         $this->jurusan = $jurusan;
     }
-    ...
-    ...
-
-    //Method fungsi tampil data
-    public function tampilkanData(){
-         return "Hai Nama Saya : $this->nama.<br> Npm saya : $this->nim.<br> Jurusan : $this->jurusan ";
-    }
 }
 
-//membuat objek dan menampilkannya
+//membuat objek 
 $tampil = new Mahasiswa ("Revano Augustofa",230102071,"Teknik Informatika");
-echo $tampil->tampilkanData();
+
 
 ```
 3. Membuat Metode Tambahan
@@ -105,14 +98,12 @@ class Mahasiswa {
 
     ...
     ...
-    ...
 
     //Method update jurusan
     public function updateJurusan($jurusan){
         $this->jurusan = $jurusan;
     }
 }
-    ...
     ...
 
 ```
@@ -134,13 +125,13 @@ class Mahasiswa {
 
 }
 
-//membuat objek dan menampilkannya
-echo "<u>Data Awal</u><br>";
+//membuat objek
+
+//data awal
 $tampil = new Mahasiswa ("Revano Augustofa",230102071,"Teknik Informatika");
-    ...
+
 echo "<br><br>";
 
-echo "<u>Data yang sudah diperbarui</u><br>";
 //mengupdate data jurusan menjadi teknik mesin
 $tampil->updateJurusan("Teknik Mesin");
 
@@ -163,17 +154,13 @@ class Mahasiswa {
     }
 }
 
-//membuat objek dan menampilkannya
+//membuat objek
 
 //data awal
 echo "<u>Data Awal</u><br>";
 $tampil = new Mahasiswa ("Revano Augustofa",230102071,"Teknik Informatika");
 
 echo "<br><br>";
-
-//perbaharui isi data jurusan
-echo "<u>Data yang sudah diperbarui</u><br>";
-$tampil->updateJurusan("Teknik Mesin");
 
 //mengubah nilai atribut nim
 $tampil->setNim("230102088");
