@@ -19,7 +19,8 @@ dalam class yang berbeda (Kemampuan untuk mengubah bentuk suatu objek).
 - Abstraction: Menggambarkan sifat dan perilaku suatu objek tanpa menggambarkan detail implementasinya.
 
 
-## Jobsheet 1
+## Jobsheet 1 
+<i>Menggunakan Konsep Kelas dan Objek dalam PHP</i>
 
 ### <u> Instruksi Kerja </u>
 1. Membuat Class dan Object
@@ -255,6 +256,60 @@ echo $tampil->tampilkanData();
 ________________
 
 ### <u> TUGAS </u>
+1. Implementasikan kelas Dosen dengan atribut nama, nip, dan mataKuliah.
+2. Buat metode tampilkanDosen() untuk menampilkan informasi dosen.
+3. Buat objek dari kelas Dosen, dan gunakan metode tampilkanDosen() untuk
+menampilkan informasi tersebut.
+4. Buat dokumentasi proyek dan unggah ke repository GitHub, menjelaskan proses
+pembuatan kelas, penggunaan metode, dan hasil output.
+
+
+**<u>1. Pembuatan Kelas </u>**
+```php
+<?php
+
+//definisi kelas
+class Dosen {
+    //atribut atau properti
+    public $nama; // membuat variabel nama
+    public $nip; // membuat variabel nip
+    public $mataKuliah; // membuat variabel mataKuliah
+}
+```
+**<u>2. Pembuatan Metode </u>**
+```php
+class Dosen {
+    ...
+
+    //constructor
+    public function __construct($nama,$nip,$mataKuliah){
+        $this->nama = $nama;
+        $this->nip = $nip;
+        $this->mataKuliah = $mataKuliah;
+    }
+    //method fungsi tampil dosen
+    public function tampilkanDosen(){
+        return "Nama Dosen: $this->nama <br> NIP: $this->nip<br> Matakuliah : $this->mataKuliah";
+    }
+}
+
+```
+**<u>3. Pembuatan Objek </u>**
+```php
+<?php
+
+//definisi kelas
+class Dosen {
+    ...
+    ...
+    ...
+}
+
+//membuat objek dan menampilkannya
+$tampil =new Dosen("Revano","238282298","Matematika");
+echo $tampil->tampilkanDosen();
+
+```
 
 ### <i>Full Code :</i>
 
@@ -285,7 +340,7 @@ class Dosen {
 $tampil =new Dosen("Revano","238282298","Matematika");
 echo $tampil->tampilkanDosen();
 ```
-### <i style="background: blue">Hasil Output:</i>
+**<u>4. Output </u>**
 ![alt text](image-2.png)
 ## Jobsheet 2
 
