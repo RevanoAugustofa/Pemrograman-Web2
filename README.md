@@ -208,8 +208,9 @@ echo $tampil->tampilkanData();
 
 ```
 
+_______
 
-***Full Code :***
+### <i>Full Code :</i>
 
 jika dalam pengaplikasiannya akan tampak seperti ini.
 ```php
@@ -264,7 +265,7 @@ echo $tampil->tampilkanData();
 ```
 
 ***Hasil Output :***
-
+![alt text](image-1.png)
 
 
 
