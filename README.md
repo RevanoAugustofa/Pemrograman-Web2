@@ -235,7 +235,7 @@ echo $mahasiswa2->getmataKuliah();
 <?php 
 <?php 
 //mendefinisikan class mahasiswa
-class Mahasiswa{
+class Mahasiswa extends Pengguna{
 
     private $nama;
     private $nim;
@@ -243,6 +243,7 @@ class Mahasiswa{
 
     //membuat construct 
     public function __construct($nama, $nim,$jurusan){
+        parent::__construct($nama);
         $this->nama = $nama;
         $this->nim = $nim;
         $this->jurusan = $jurusan;

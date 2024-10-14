@@ -7,6 +7,7 @@ class Mahasiswa{
     private $jurusan;
 
     //membuat construct 
+
     public function __construct($nama, $nim,$jurusan){
         $this->nama = $nama;
         $this->nim = $nim;
@@ -59,7 +60,6 @@ echo "NIM :".$mahasiswa1->getNim()."<br>";
 echo "Jurusan :".$mahasiswa1->getJurusan()."<br>";
 
 $mahasiswa1->aksesFitur();
-
 class Pengguna {
     protected $nama;
 
@@ -70,6 +70,11 @@ class Pengguna {
     public function getNama(){
         return $this->nama;
     }
+
+    public function aksesFitur(){
+        echo "Melihat data pengguna<br>";
+    }
+
 }
 
  class Dosen extends Pengguna{
@@ -89,7 +94,7 @@ class Pengguna {
     }
 }
 echo "<hr>";
-$mahasiswa2 = new Dosen ("Arya Abu Hurairah", "Matematika");
-echo $mahasiswa2->getNama()."<br>";
-echo $mahasiswa2->getmataKuliah();
-$mahasiswa2->aksesFitur();
+$dosen = new Dosen ("Arya Abu Hurairah", "Matematika");
+echo $dosen->getNama()."<br>";
+echo $dosen->getmataKuliah();
+$dosen->aksesFitur();
