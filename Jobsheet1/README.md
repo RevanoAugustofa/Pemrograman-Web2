@@ -39,7 +39,7 @@
           $this->nip = $nip;
           $this->mataKuliah = $mataKuliah;
       }
-      //method fungsi tampil dosen
+      //method tampil dosen
       public function tampilkanDosen(){
           return "Nama Dosen: $this->nama <br> NIP: $this->nip<br> Matakuliah : $this->mataKuliah";
       }
