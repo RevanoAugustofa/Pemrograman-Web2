@@ -21,5 +21,5 @@ dalam class yang berbeda (Kemampuan untuk mengubah bentuk suatu objek).
 - Abstraction: Menggambarkan sifat dan perilaku suatu objek tanpa menggambarkan detail implementasinya.
 
 ___
-## -----------------------------------------
+
 ## <i style="color: red"> Untuk Readme tersedia pada folder Jobsheet 1, 2 dan 3</i> Terima kasih 🙏
