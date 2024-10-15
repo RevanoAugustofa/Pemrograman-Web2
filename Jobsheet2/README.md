@@ -297,6 +297,77 @@ echo "Mata Kuliah: " . $dosen1->getMataKuliah() . "<br>";
 ![alt text](/src/img/inheritance3-4.png)
 
 # 4. polymorphism
+
+### a. Membuat class Pengguna dengan metode ```aksesFitur()```.
+```php
+//class pengguna
+class Pengguna {
+    protected $nama; // Properti protected untuk nama
+
+    public function __construct($nama) {
+        $this->nama = $nama; // Mengatur nama
+    }
+
+    // Method akses fitur 
+    public function aksesFitur() {
+        echo "";
+    }
+}
+```
+- Method ```aksesFitur()``` di sini adalah method default yang akan di-override di class Mahasiswa dan Dosen. Dalam class Pengguna, method ini hanya mencetak kosong (" ")
+
+### b. Implementasi ```aksesFitur()``` dengan cara berbeda di class Dosen dan Mahasiswa.
+
+```php
+class Mahasiswa extends Pengguna {
+
+    // Meng-overwrite method aksesFitur dari class Pengguna
+    public function aksesFitur() {
+        echo "Melihat data Mahasiswa<br>";
+    }
+}
+
+
+class Dosen extends Pengguna {
+    private $mataKuliah;
+
+    // Meng-overwrite method aksesFitur dari class Pengguna
+    public function aksesFitur() {
+        echo "Melihat data Dosen<br>";
+    }
+}
+```
+- Mahasiswa
+    - Mahasiswa mewarisi class Pengguna dan menambahkan dua properti baru: nim dan jurusan, yang bersifat private.
+    - Method ```aksesFitur()``` di-override untuk menampilkan teks khusus yang relevan dengan mahasiswa, yaitu "Melihat data Mahasiswa".
+- Dosen
+    - Dosen juga mewarisi class Pengguna dan menambahkan properti mataKuliah yang bersifat private.
+    - Method ```aksesFitur()``` di-override untuk menampilkan teks khusus yang relevan dengan dosen, yaitu "Melihat data Dosen"
+
+### c. Instansiasi objek dari class Dosen dan Mahasiswa, lalu panggil metode
+```php
+// Instansiasi objek Dosen
+$dosen1 = new Dosen("Arya Abu Hurairah", "Matematika");
+
+//menampilkan data dosen
+echo "Nama Dosen: " . $dosen1->getNama() . "<br>";
+echo "Mata Kuliah: " . $dosen1->getMataKuliah() . "<br>";
+
+$dosen1->aksesFitur(); //Menampilkan akses fitur data Dosen
+
+// Instansiasi objek Mahasiswa
+$mahasiswa1 = new Mahasiswa("Arya Wiguna", 230201038, "Teknik Elektro");
+//menampilkan data Mahasiswa
+echo "Nama: " . $mahasiswa1->getNama() . "<br>";
+echo "NIM: " . $mahasiswa1->getNim() . "<br>";
+echo "Jurusan: " . $mahasiswa1->getJurusan() . "<br>";
+
+$mahasiswa1->aksesFitur(); //Menampilkan akses fitur data Mahasiswa
+```
+- Memanggil method ```aksesFitur()``` untuk menampilkan pesan "Melihat data Mahasiswa", sesuai dengan implementasi method tersebut di class Mahasiswa.
+- Memanggil method ```aksesFitur()``` untuk menampilkan pesan "Melihat data Dosen", sesuai dengan implementasi method tersebut di class Dosen.
+
+## Implementasi <i></i> :
 ```php
 <?php 
 // Mendefinisikan class Mahasiswa
@@ -358,7 +429,7 @@ class Pengguna {
 
     // Method untuk akses fitur
     public function aksesFitur() {
-        echo "<br>";
+        echo "";
     }
 }
 
