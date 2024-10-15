@@ -1,86 +1,89 @@
-<?php
+<?php 
+// Mendefinisikan class Mahasiswa
+class Mahasiswa extends Pengguna{
 
-// Mendefinisikan kelas abstrak Pengguna
-abstract class Pengguna {
-    // Properti untuk menyimpan nama pengguna
-    protected $nama;
+    private $nim; // Properti private untuk NIM
+    private $jurusan; // Properti private untuk jurusan
 
-    // Constructor untuk menginisialisasi nama pengguna
-    public function __construct($nama) {
-        $this->nama = $nama;
-    }
-    
-    // Method untuk mendapatkan nama pengguna
-    public function getNama() {
-        return $this->nama;
-    }
-
-    // Method abstrak yang harus diimplementasikan oleh kelas turunan
-    abstract public function aksesFitur();
-}
-
-// Kelas Mahasiswa yang mewarisi Pengguna
-class Mahasiswa extends Pengguna {
-    // Properti untuk menyimpan NIM dan jurusan mahasiswa
-    private $nim;
-    private $jurusan;
-
-    // Constructor untuk menginisialisasi nama, NIM, dan jurusan
+    // Konstruktor untuk inisialisasi
     public function __construct($nama, $nim, $jurusan) {
-        parent::__construct($nama); // Memanggil constructor dari kelas induk
+        parent::__construct($nama); // Memanggil constructor dari class Pengguna
         $this->nim = $nim;
         $this->jurusan = $jurusan;
     }
 
-    // Method untuk mendapatkan NIM mahasiswa
+    // Method untuk mendapatkan nama
+    public function getNama() {
+        return $this->nama; // Mengembalikan nama
+    }
+
+    // Method untuk mendapatkan NIM
     public function getNim() {
-        return $this->nim;
+        return $this->nim; // Mengembalikan NIM
     }
 
-    // Method untuk mendapatkan jurusan mahasiswa
+    // Method untuk mendapatkan jurusan
     public function getJurusan() {
-        return $this->jurusan;
+        return $this->jurusan; // Mengembalikan jurusan
     }
 
-    // Implementasi aksesFitur untuk kelas Mahasiswa
-    public function aksesFitur() {
-        echo "<i>Mahasiswa {$this->nama} dapat mengakses data Mahasiswa</i>.<br>";
-    }
+    // Method untuk akses fitur
+    
+    // public function aksesFitur() {
+    //     echo "Melihat data Mahasiswa<br>";
+    // }
 }
 
-// Kelas Dosen yang mewarisi Pengguna
+// Instansiasi objek Mahasiswa
+$mahasiswa1 = new Mahasiswa("Arya Wiguna", 230201038, "Teknik Elektro");
+
+// Menampilkan data mahasiswa
+echo "Nama: " . $mahasiswa1->getNama() . "<br>";
+echo "NIM: " . $mahasiswa1->getNim() . "<br>";
+echo "Jurusan: " . $mahasiswa1->getJurusan() . "<br>";
+
+// Mengakses fitur mahasiswa
+$mahasiswa1->aksesFitur();
+
+// Class Pengguna
+abstract class Pengguna {
+    protected $nama; // Properti protected untuk nama
+
+    public function __construct($nama) {
+        $this->nama = $nama; // Mengatur nama
+    }
+
+    public function getNama() {
+        return $this->nama; // Mengembalikan nama
+    }
+
+    // Method untuk akses fitur
+    abstract public function aksesFitur();
+}
+
+// Class Dosen yang mewarisi dari Pengguna
 class Dosen extends Pengguna {
-    // Properti untuk menyimpan mata kuliah dosen
-    private $mataKuliah;
+    private $mataKuliah; // Properti private untuk mata kuliah
 
-    // Constructor untuk menginisialisasi nama dan mata kuliah
     public function __construct($nama, $mataKuliah) {
-        parent::__construct($nama); // Memanggil constructor dari kelas induk
-        $this->mataKuliah = $mataKuliah;
+        parent::__construct($nama); // Memanggil constructor dari class Pengguna
+        $this->mataKuliah = $mataKuliah; // Mengatur mata kuliah
     }
 
-    // Method untuk mendapatkan mata kuliah dosen
     public function getMataKuliah() {
-        return $this->mataKuliah;
+        return $this->mataKuliah; // Mengembalikan mata kuliah
     }
 
-    // Implementasi aksesFitur untuk kelas Dosen
     public function aksesFitur() {
-        echo "<i>Dosen {$this->nama} dapat mengakses data Dosen</i>.<br>";
+        echo "Melihat data Dosen<br>"; // Mengakses fitur dosen
     }
 }
 
-// Instansiasi objek dari kelas Mahasiswa
-$mahasiswa = new Mahasiswa("Arya Wiguna", "230201038", "Teknik Elektro");
-echo "Nama : " . $mahasiswa->getNama() . "<br>"; // Menampilkan nama mahasiswa
-echo "NIM : " . $mahasiswa->getNim() . "<br>"; // Menampilkan NIM mahasiswa
-echo "Jurusan : " . $mahasiswa->getJurusan() . "<br>"; // Menampilkan jurusan mahasiswa
-$mahasiswa->aksesFitur(); // Memanggil metode aksesFitur untuk mahasiswa
-
+// Membuat objek Dosen
+$dosen1 = new Dosen("Arya Abu Hurairah", "Matematika");
+// Menampilkan nama dosen dan mata kuliah
 echo "<hr>";
-
-// Instansiasi objek dari kelas Dosen
-$dosen = new Dosen("Arya Abu Hurairah", "Matematika");
-echo "Nama : " . $dosen->getNama() . "<br>"; // Menampilkan nama dosen
-echo "Mata Kuliah : " . $dosen->getMataKuliah() . "<br>"; // Menampilkan mata kuliah dosen
-$dosen->aksesFitur(); // Memanggil metode aksesFitur untuk dosen
+echo "Nama Dosen: " . $dosen1->getNama() . "<br>";
+echo "Mata Kuliah: " . $dosen1->getMataKuliah() . "<br>";
+// Mengakses fitur dosen
+$dosen1->aksesFitur();
