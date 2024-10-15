@@ -34,7 +34,7 @@ class Dosen extends Person1{
     }
 
     public function getRole(){
-        echo "Dosen";
+        echo " Role : Dosen";
     }
 
 }
@@ -53,7 +53,7 @@ class Mahasiswa extends Person1{
     }
 
     public function getRole(){
-        echo "Mahasiswa";
+        echo "Role : Mahasiswa";
     }
 }
 
