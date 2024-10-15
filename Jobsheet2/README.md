@@ -198,9 +198,59 @@ echo "Jurusan: " . $mahasiswa1->getJurusan() . "<br>";
 ![alt text](/src/img/encaptulation3-4.png)
 
 
-
-
 # 3. Inheritance
+### a. Membuat class Pengguna dengan atribut nama dan metode ```getNama()```.
+```php
+// Class dasar untuk Pengguna
+class Pengguna {
+    protected $nama; // Properti protected untuk nama
+
+    // Konstruktor untuk inisialisasi nama
+    public function __construct($nama) {
+        $this->nama = $nama; // Mengatur nama
+    }
+
+    // Method untuk mendapatkan nama
+    public function getNama() {
+        return $this->nama; // Mengembalikan nama
+    }
+}
+```
+- Class Pengguna adalah class dasar yang berfungsi sebagai parent class. Class ini akan diwarisi oleh class lain, dalam hal ini class Dosen.
+- protected ```$nama```: Atribut ini adalah variabel yang menyimpan nama pengguna. Aksesnya bersifat protected, yang berarti hanya bisa diakses oleh class itu sendiri dan class yang mewarisinya (class turunan).
+- ```__construct($nama)```: Merupakan metode khusus yang akan dipanggil secara otomatis ketika objek dibuat. Di sini, nama pengguna akan diinisialisasi saat objek diinstansiasi.
+- ```getNama()```: Sebuah getter untuk mengambil nilai dari properti nama. Method ini digunakan untuk mengembalikan nama pengguna yang telah diset melalui konstruktor
+### b. Membuat class Dosen yang mewarisi class Pengguna dan menambah Atribut Matakuliah
+
+```php
+class Dosen extends Pengguna {
+    private $mataKuliah; // Properti private untuk mata kuliah
+
+    // Konstruktor untuk inisialisasi nama dan mata kuliah
+    public function __construct($nama, $mataKuliah) {
+        parent::__construct($nama); // Memanggil constructor dari class Pengguna
+        $this->mataKuliah = $mataKuliah; // Mengatur mata kuliah
+    }
+
+    // Method untuk mendapatkan mata kuliah
+    public function getMataKuliah() {
+        return $this->mataKuliah; // Mengembalikan mata kuliah
+    }
+}
+```
+- Class Dosen menggunakan sintaks extends Pengguna, yang berarti class ini mewarisi semua properti dan metode dari class Pengguna. Dengan kata lain, Dosen adalah subclass dari Pengguna.
+- private ```$mataKuliah```: Atribut ini menyimpan informasi mengenai mata kuliah yang diampu oleh dosen. Bersifat private, sehingga hanya dapat diakses dari dalam class Dosen sendiri.
+- ```__construct($nama, $mataKuliah)```: Konstruktor ini menerima dua parameter, nama dan mataKuliah. Di dalamnya, terdapat ```parent::__construct($nama)``` yang bertujuan untuk memanggil konstruktor dari class induk (Pengguna) guna menginisialisasi properti nama.
+Properti mataKuliah juga diinisialisasi di sini.
+- ```getMataKuliah()```: Method ini berfungsi sebagai getter untuk mengambil nilai dari atribut mataKuliah.
+
+### c. Instansiasi objek dari class Dosen dan tampilkan data dosen.
+
+```php
+$dosen1 = new Dosen("Arya Abu Hurairah", "Matematika"); 
+```
+- objek $dosen1 dibuat dari class Dosen dengan nama "Arya Abu Hurairah" dan mata kuliah "Matematika".
+- Ketika objek ini dibuat, konstruktor class Dosen dipanggil, yang juga memanggil konstruktor dari class Pengguna untuk menginisialisasi nama
 ## Implementasi <i></i> :
 ```php
 <?php
