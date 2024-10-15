@@ -1,6 +1,4 @@
- # Jobsheet 1 
- 
- <i>Menggunakan Konsep Kelas dan Objek dalam PHP</i>
+ # Jobsheet 1 <hr>
  
  ### <u> Instruksi Kerja </u>
  1. Membuat Class dan Object
