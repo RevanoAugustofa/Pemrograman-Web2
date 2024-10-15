@@ -1,6 +1,6 @@
 ## TUGAS
 
-1. Encapsulation (Enkapsulasi)
+1. Encapsulation<br>
 Dalam kode ini, atribut ```name```, ```nidn```, dan ```nim``` disimpan dalam modifier private. Atribut-atribut tersebut tidak dapat diakses langsung dari luar class, hanya bisa diakses atau dimodifikasi melalui method getter dan setter seperti ```getNama()```, ```setNama()```, ```getNidn()```, dan ```getNim()```. Unutuk membantu melindungi data agar tidak dimanipulasi langsung secara tidak benar.
 
 ```php
@@ -16,7 +16,7 @@ public function setNama($name){
     $this->name = $name;
 }
 ```
-2. Inheritance (Pewarisan)
+2. Inheritance (Pewarisan)<br>
 Dalam kode ini, Dosen dan Mahasiswa adalah subclass yang mewarisi dari superclass Person1. Mereka mewarisi atribut name dan method ```getNama()```, ```setNama()```, serta method abstrak ```getRole()```, yang diimplementasikan secara berbeda dalam subclass.
 
 ```php
@@ -32,7 +32,7 @@ class Mahasiswa extends Person1 {
 ```
 Manfaat inheritance adalah menghindari pengulangan kode dan memungkinkan penggunaan kembali kode yang ada.
 
-3. Polymorphism 
+3. Polymorphism <br>
  Di sini, method ```getRole()``` adalah abstract method di Person1 yang diimplementasikan berbeda dalam class Dosen dan Mahasiswa. Kedua class tersebut memiliki method ```getRole()```, tetapi outputnya berbeda ketika dipanggil.
 
 ```php
@@ -47,7 +47,7 @@ public function getRole(){
 ```
 meskipun method ```getRole()``` dipanggil dari objek Dosen dan Mahasiswa, hasilnya akan berbeda.
 
-4. Abstraction
+4. Abstraction<br>
 Dalam kode ini, class Person1 adalah abstract class yang mengandung method abstract ```getRole()```. Abstract class tidak dapat diinstansiasi langsung dan membutuhkan subclass untuk mengimplementasikan method abstract tersebut. Ini memberikan kerangka dasar (template) yang harus diikuti oleh subclass seperti Dosen dan Mahasiswa.
 
 ```php
@@ -58,7 +58,7 @@ abstract class Person1 {
 ```
 class jurnal juga bersifat abstrak dengan method abstract ```cetak_jurnal()```, di mana subclass seperti JurnalDosen dan JurnalMahasiswa mengimplementasikan method ini sesuai dengan kebutuhan masing-masing.
 
-5. Constructor
+5. Constructor<br>
 Constructor digunakan untuk menginisialisasi atribut ```name```, ```nidn```, atau ```nim``` saat objek dari class Dosen atau Mahasiswa dibuat.
 
 ```php
@@ -68,7 +68,7 @@ public function __construct($name, $nidn){
 }
 ```
 
-6. Method Overriding
+6. Method Overriding<br>
 Dalam kode ini, Dosen dan Mahasiswa melakukan override terhadap method abstract ```getRole()``` yang diwariskan dari Person1.
 
 ```php
@@ -80,7 +80,7 @@ public function getRole() {
     echo "Role : Mahasiswa";
 }
 ```
-7. Object (Pembuatan Objek)
+7. Object (Pembuatan Objek)<br>
 Setelah class didefinisikan, objek dibuat dengan menggunakan ```new``` keyword. Objek Dosen dan Mahasiswa dibuat, dan constructor digunakan untuk memberikan nilai awal bagi atribut-atribut objek tersebut.
 
 ```php
