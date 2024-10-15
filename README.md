@@ -22,4 +22,4 @@ dalam class yang berbeda (Kemampuan untuk mengubah bentuk suatu objek).
 
 ___
 ## -----------------------------------------
-#  Pemberitahuan : <i style="color: red">Readme tersedia pada folder Jobsheet 1, 2 dan 3</i> Terimakasih 🙏
+## <i style="color: red"> Untuk Readme tersedia pada folder Jobsheet 1, 2 dan 3</i> Terima kasih 🙏
