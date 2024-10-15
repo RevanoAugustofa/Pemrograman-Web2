@@ -1,26 +1,7 @@
 ## TUGAS
 
-Penjelasan Struktur:
-- Abstract Class Person1: Digunakan untuk mendefinisikan struktur umum dari seseorang, baik itu Dosen atau Mahasiswa, dengan atribut ```name``` dan method abstrak ```getRole()```.
-
-Class Dosen & Mahasiswa:
-- Kelas ini merupakan turunan dari Person1 yang menambahkan atribut khusus untuk dosen (nidn) dan mahasiswa (nim). Mereka juga mengimplementasikan method getRole untuk menunjukkan peran masing-masing.
-
-Abstract Class Jurnal:
-- Mewakili pengajuan jurnal yang bersifat abstrak dan harus diimplementasikan oleh subclass seperti JurnalDosen dan JurnalMahasiswa.
-
-Polymorphism:
-- Class Dosen dan Mahasiswa mengimplementasikan metode getRole dengan hasil yang berbeda, menunjukkan konsep polymorphism. Begitu juga dengan JurnalDosen dan JurnalMahasiswa.
-
-Object Creation:
-- Setelah objek Dosen dan Mahasiswa dibuat, ada modifikasi nama menggunakan setter, dan method untuk menampilkan peran serta atribut spesifik (NIDN dan NIM).
-
-Output:
-- Menampilkan peran Dosen, nama, NIDN, dan mencetak jurnal dosen.
-Menampilkan peran Mahasiswa, nama, NIM, dan mencetak jurnal mahasiswa.
-
 1. Encapsulation (Enkapsulasi)
-Dalam kode ini, atribut ```name```, ```nidn```, dan ```nim``` disimpan dalam modifier private. Atribut-atribut tersebut tidak dapat diakses langsung dari luar class, hanya bisa diakses atau dimodifikasi melalui method getter dan setter seperti ```getNama()```, ```setNama()```, ```getNidn()```, dan ```getNim()```. Ini membantu melindungi data agar tidak dimanipulasi langsung secara tidak benar.
+Dalam kode ini, atribut ```name```, ```nidn```, dan ```nim``` disimpan dalam modifier private. Atribut-atribut tersebut tidak dapat diakses langsung dari luar class, hanya bisa diakses atau dimodifikasi melalui method getter dan setter seperti ```getNama()```, ```setNama()```, ```getNidn()```, dan ```getNim()```. Unutuk membantu melindungi data agar tidak dimanipulasi langsung secara tidak benar.
 
 ```php
 private $name; // Atribut hanya bisa diakses dari dalam class
@@ -229,5 +210,24 @@ $jurnaldosen = new JurnalMahasiswa();
 $jurnaldosen->cetak_jurnal();
 
 ?>
-
 ```
+
+Penjelasan Struktur:
+- Abstract Class Person1: Digunakan untuk mendefinisikan struktur umum dari seseorang, baik itu Dosen atau Mahasiswa, dengan atribut ```name``` dan method abstrak ```getRole()```.
+
+Class Dosen & Mahasiswa:
+- Kelas ini merupakan turunan dari Person1 yang menambahkan atribut khusus untuk dosen (```nidn```) dan mahasiswa (```nim```). Mereka juga mengimplementasikan method getRole untuk menunjukkan peran masing-masing.
+
+Abstract Class Jurnal:
+- Mewakili pengajuan jurnal yang bersifat abstrak dan harus diimplementasikan oleh subclass seperti JurnalDosen dan JurnalMahasiswa.
+
+Polymorphism:
+- Class Dosen dan Mahasiswa mengimplementasikan metode getRole dengan hasil yang berbeda, menunjukkan konsep polymorphism. Begitu juga dengan JurnalDosen dan JurnalMahasiswa.
+
+Object Creation:
+- Setelah objek Dosen dan Mahasiswa dibuat, ada modifikasi nama menggunakan setter, dan method untuk menampilkan peran serta atribut spesifik (NIDN dan NIM).
+
+Output:
+- Menampilkan peran Dosen, nama, NIDN, dan mencetak jurnal dosen.
+Menampilkan peran Mahasiswa, nama, NIM, dan mencetak jurnal mahasiswa.
+
