@@ -314,7 +314,7 @@ class Mahasiswa extends Pengguna{
     }
 
     // Method untuk akses fitur
-    
+
     // public function aksesFitur() {
     //     echo "Melihat data Mahasiswa<br>";
     // }
@@ -377,31 +377,3 @@ $dosen1->aksesFitur();
 ```
 
 
-# Panduan Penggunaan
-1. Instalasi
-Untuk menjalankan proyek ini, Anda memerlukan server lokal seperti XAMPP atau WAMP yang telah terinstal di komputer Anda.
-
-Langkah-langkah Instalasi:
-Download dan Instal XAMPP:
-
-Unduh XAMPP dari situs resmi XAMPP.
-Instal XAMPP di komputer Anda dengan mengikuti petunjuk di layar.
-Siapkan Folder Proyek:
-
-Setelah menginstal XAMPP, buka folder instalasi XAMPP (misalnya, C:\xampp\htdocs).
-Buat folder baru dengan nama proyek, misalnya sistem_informasi_mahasiswa.
-Salin Kode Sumber:
-
-Salin kode sumber yang telah dituliskan di atas ke dalam file baru bernama index.php di dalam folder proyek yang baru dibuat.
-2. Menjalankan Program
-Mulai Server Apache:
-
-Buka XAMPP Control Panel.
-Klik tombol "Start" pada modul Apache untuk memulai server.
-Akses Aplikasi:
-
-Buka browser Anda.
-Ketikkan URL berikut: http://localhost/sistem_informasi_mahasiswa/index.php dan tekan Enter.
-Lihat Hasil:
-
-Anda akan melihat output dari program yang menampilkan data mahasiswa dan dosen serta akses fitur yang sesuai.
