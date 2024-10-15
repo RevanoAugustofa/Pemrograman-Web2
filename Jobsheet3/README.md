@@ -213,6 +213,8 @@ $jurnaldosen->cetak_jurnal();
 
 ?>
 ```
+## Hasil Output :
+![alt text](/src/img/tugas5-6.png)
 
 Penjelasan Struktur:
 - Abstract Class Person1: Digunakan untuk mendefinisikan struktur umum dari seseorang, baik itu Dosen atau Mahasiswa, dengan atribut ```name``` dan method abstrak ```getRole()```.
