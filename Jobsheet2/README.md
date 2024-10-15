@@ -73,6 +73,64 @@ Encapsulation adalah teknik untuk menyembunyikan detail dari objek dan hanya mem
 - Setter: Method untuk mengubah nilai dari properti.
 - Getter: Method untuk mendapatkan nilai dari properti.
 
+### a. Mengubah atribut dalam class Mahasiswa menjadi private.
+```php
+private $nama; 
+private $nim; 
+private $jurusan;
+```
+- Atribut $nama, $nim, dan $jurusan dideklarasikan sebagai private, artinya atribut ini hanya dapat diakses dan dimodifikasi dari dalam class Mahasiswa. Atribut ini tidak bisa langsung diakses dari luar class.
+
+### b. membuat metode getter dan setter untuk atribut nama, nim, dan jurusan.
+```php
+public function setNama($nama) {
+    $this->nama = $nama; // Mengatur nama
+}
+public function setNim($nim) {
+    $this->nim = $nim; // Mengatur NIM
+}
+public function setJurusan($jurusan) {
+    $this->jurusan = $jurusan; // Mengatur jurusan
+}
+
+public function getNama() {
+    return $this->nama; // Mengembalikan nama
+}
+public function getNim() {
+    return $this->nim; // Mengembalikan NIM
+}
+public function getJurusan() {
+    return $this->jurusan; // Mengembalikan jurusan
+}
+```
+- Setter
+    - ```setNama($nama)```: Mengubah nilai atribut nama.
+    - ```setNim($nim)```: Mengubah nilai atribut nim.
+    - ```setJurusan($jurusan)```: Mengubah nilai atribut jurusan.
+
+- Getter
+    - ```getNama()```: Mengembalikan nilai dari atribut nama.
+    - ```getNim()```: Mengembalikan nilai dari atribut nim.
+    - ```getJurusan()```: Mengembalikan nilai dari atribut jurusan.
+
+### c. Mendemonstrasikan akses ke atribut menggunakan metode getter dan setter.
+
+```php
+// Instansiasi objek Mahasiswa
+$mahasiswa1 = new Mahasiswa("","","");
+// Mengatur data mahasiswa
+$mahasiswa1->setNama("Arya Wiguna");
+$mahasiswa1->setNim(230201038);
+$mahasiswa1->setJurusan("Teknik Elektro");
+
+// Menampilkan data mahasiswa
+echo "Nama: " . $mahasiswa1->getNama() . "<br>";
+echo "NIM: " . $mahasiswa1->getNim() . "<br>";
+echo "Jurusan: " . $mahasiswa1->getJurusan() . "<br>";
+
+```
+
+
 ## Implementasi <i></i> :
 
 ```php
