@@ -26,5 +26,5 @@ class Student extends Person{
     }
 }
 $tampil = new Student("2332938928","Ibnu Salsah");
-echo $tampil->getName()."<br>";
-echo $tampil->getStudentID();
+echo "Nama : ".$tampil->getName()."<br>";
+echo "ID : ".$tampil->getStudentID();

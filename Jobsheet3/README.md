@@ -1,5 +1,45 @@
 # Jobsheet 3 <hr>
- 
+## Instruksi Kerja 
+ ## 1. Inheritance
+```php
+class Person{
+    protected $name;
+
+    public function __construct($name){
+        $this->name = $name;
+    }
+
+    public function getName(){
+        return $this->name;
+    }
+}
+
+class Student extends Person{
+    
+    public $studentID;
+
+    public function __construct($studentID,$name){
+        parent::__construct($name);
+        $this->studentID = $studentID;
+    }
+
+    public function getStudentID(){
+        return $this->studentID;
+    }
+}
+$tampil = new Student("2332938928","Ibnu Salsah");
+echo "Nama : ".$tampil->getName()."<br>";
+echo "ID : ".$tampil->getStudentID();
+```
+
+![alt text](/src/img/inheritance5-6.png)
+
+ ## 2. Polymorphism
+
+ ## 3. Encaptulation
+
+ ## 4. Abstraction 
+
 
 ## TUGAS
 
