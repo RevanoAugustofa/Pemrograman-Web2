@@ -17,7 +17,7 @@ public function setNama($name){
 }
 ```
 2. Inheritance (Pewarisan)
-Inheritance adalah konsep di mana sebuah class dapat mewarisi properti dan method dari class lain. Dalam kode ini, Dosen dan Mahasiswa adalah subclass yang mewarisi dari superclass Person1. Mereka mewarisi atribut name dan method getNama(), setNama(), serta method abstrak getRole(), yang diimplementasikan secara berbeda dalam subclass.
+Dalam kode ini, Dosen dan Mahasiswa adalah subclass yang mewarisi dari superclass Person1. Mereka mewarisi atribut name dan method ```getNama()```, ```setNama()```, serta method abstrak ```getRole()```, yang diimplementasikan secara berbeda dalam subclass.
 
 ```php
 class Dosen extends Person1 {
@@ -32,8 +32,8 @@ class Mahasiswa extends Person1 {
 ```
 Manfaat inheritance adalah menghindari pengulangan kode dan memungkinkan penggunaan kembali kode yang ada.
 
-3. Polymorphism (Polimorfisme)
-Polymorphism memungkinkan objek dari class yang berbeda diakses melalui interface yang sama, namun dengan perilaku yang berbeda. Di sini, method getRole() adalah abstract method di Person1 yang diimplementasikan berbeda dalam class Dosen dan Mahasiswa. Kedua class tersebut memiliki method getRole(), tetapi outputnya berbeda ketika dipanggil.
+3. Polymorphism 
+ Di sini, method ```getRole()``` adalah abstract method di Person1 yang diimplementasikan berbeda dalam class Dosen dan Mahasiswa. Kedua class tersebut memiliki method ```getRole()```, tetapi outputnya berbeda ketika dipanggil.
 
 ```php
 public function getRole(){
@@ -45,10 +45,10 @@ public function getRole(){
     echo "Role : Mahasiswa";
 }
 ```
-Dalam hal ini, meskipun method getRole() dipanggil dari objek Dosen dan Mahasiswa, hasilnya akan berbeda.
+meskipun method ```getRole()``` dipanggil dari objek Dosen dan Mahasiswa, hasilnya akan berbeda.
 
-4. Abstraction (Abstraksi)
-Abstraction memungkinkan kita untuk menyembunyikan detail kompleks dari sebuah sistem dan hanya menampilkan fitur penting. Dalam kode ini, class Person1 adalah abstract class yang mengandung method abstract getRole(). Abstract class tidak dapat diinstansiasi langsung dan membutuhkan subclass untuk mengimplementasikan method abstract tersebut. Ini memberikan kerangka dasar (template) yang harus diikuti oleh subclass seperti Dosen dan Mahasiswa.
+4. Abstraction
+Dalam kode ini, class Person1 adalah abstract class yang mengandung method abstract ```getRole()```. Abstract class tidak dapat diinstansiasi langsung dan membutuhkan subclass untuk mengimplementasikan method abstract tersebut. Ini memberikan kerangka dasar (template) yang harus diikuti oleh subclass seperti Dosen dan Mahasiswa.
 
 ```php
 abstract class Person1 {
@@ -56,10 +56,10 @@ abstract class Person1 {
     abstract public function getRole();
 }
 ```
-Selain itu, class jurnal juga bersifat abstrak dengan method abstract cetak_jurnal(), di mana subclass seperti JurnalDosen dan JurnalMahasiswa mengimplementasikan method ini sesuai dengan kebutuhan masing-masing.
+class jurnal juga bersifat abstrak dengan method abstract ```cetak_jurnal()```, di mana subclass seperti JurnalDosen dan JurnalMahasiswa mengimplementasikan method ini sesuai dengan kebutuhan masing-masing.
 
-5. Constructor dan Destructor
-Constructor adalah method khusus yang secara otomatis dipanggil saat objek dibuat. Di sini, constructor digunakan untuk menginisialisasi atribut name, nidn, atau nim saat objek dari class Dosen atau Mahasiswa dibuat.
+5. Constructor
+Constructor digunakan untuk menginisialisasi atribut ```name```, ```nidn```, atau ```nim``` saat objek dari class Dosen atau Mahasiswa dibuat.
 
 ```php
 public function __construct($name, $nidn){
@@ -67,10 +67,9 @@ public function __construct($name, $nidn){
     $this->nidn = $nidn;
 }
 ```
-Destructor tidak digunakan dalam contoh ini, tetapi merupakan method khusus lain yang akan dipanggil saat objek dihapus dari memori.
 
 6. Method Overriding
-Method overriding terjadi ketika subclass memberikan implementasi spesifik dari method yang sudah didefinisikan di superclass. Dalam kode ini, Dosen dan Mahasiswa melakukan override terhadap method abstract getRole() yang diwariskan dari Person1.
+Dalam kode ini, Dosen dan Mahasiswa melakukan override terhadap method abstract ```getRole()``` yang diwariskan dari Person1.
 
 ```php
 public function getRole() {
@@ -81,8 +80,8 @@ public function getRole() {
     echo "Role : Mahasiswa";
 }
 ```
-7. Object Creation (Pembuatan Objek)
-Setelah class didefinisikan, objek dibuat dengan menggunakan new keyword. Objek Dosen dan Mahasiswa dibuat, dan constructor digunakan untuk memberikan nilai awal bagi atribut-atribut objek tersebut.
+7. Object (Pembuatan Objek)
+Setelah class didefinisikan, objek dibuat dengan menggunakan ```new``` keyword. Objek Dosen dan Mahasiswa dibuat, dan constructor digunakan untuk memberikan nilai awal bagi atribut-atribut objek tersebut.
 
 ```php
 $dosen = new Dosen("Raharjo", "123456");
