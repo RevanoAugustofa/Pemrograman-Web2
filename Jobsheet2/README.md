@@ -1,5 +1,6 @@
-# Jobsheet 2 <hr>
- 
+# Jobsheet 2 
+
+## TUGAS
 # 1. Class dan Objek
 
 Class adalah template yang digunakan untuk membuat objek. Contoh pada kasus ini, ```Mahasiswa``` adalah class yang digunakan untuk membuat objek mahasiswa.
@@ -65,7 +66,7 @@ echo $mahasiswa1->tampilkanData();
 
 # 2. Encaptulation <i>(pembungkusan)</i>
 
-Encapsulation adalah teknik untuk menyembunyikan detail dari objek dan hanya membiarkan akses ke data melalui method. Dalam langkah ini, kita akan menjadikan properti ```nama```, ```nim```, dan ```jurusan``` sebagai <b>private</b> dan menggunakan getter dan setter untuk mengaksesnya.
+Encapsulation adalah teknik untuk menyembunyikan detail dari objek dan hanya membiarkan akses ke data melalui method. Menjadikan properti ```nama```, ```nim```, dan ```jurusan``` sebagai <b>private</b> dan menggunakan getter dan setter untuk mengaksesnya.
 
 ### Penjelasan Kode:
 - Private: Properti yang tidak dapat diakses langsung dari luar class.
@@ -120,6 +121,7 @@ class Mahasiswa {
     }
 }
 ```
+Penggunaan class Mahasiswa:
 ```php
 // Instansiasi objek Mahasiswa
 $mahasiswa1 = new Mahasiswa("","","");
@@ -285,6 +287,87 @@ $dosen1->aksesFitur();
 ![alt text](/src/img/polymorphism3-4.png)
 
 # 5. Abstraction
+Abstraction adalah konsep yang memungkinkan kita untuk menyembunyikan detail implementasi dan hanya menampilkan fungsi penting dari sebuah objek.
+
+### a. Membuat class abstrak ```Pengguna``` dengan metode abstrak ```aksesFitur()```.
+Membuat abstrak class baru dengan nama Pengguna kodenya sebagai berikut:
+```php
+abstract class Pengguna {
+    protected $nama;
+
+    public function __construct($nama){
+        $this->nama=$nama;
+    }
+    
+    public function getNama(){
+        return $this->nama;
+    }
+
+    abstract public function aksesFitur();
+}
+```
+- ```abstract class Pengguna```: Mendefinisikan class abstrak yang tidak dapat diinstansiasi langsung.
+```protected $nama```: Properti nama bersifat protected sehingga bisa diakses oleh class turunan.
+```abstract public function aksesFitur()```: Method abstrak yang harus diimplementasikan di class turunan. Tidak memiliki implementasi di class abstrak ini.
+
+### b. Mengimplementasikan Method ```aksesFitur()```
+class ```Mahasiswa``` dan ```Dosen``` yang mewarisi ```Pengguna``` akan mengimplementasikan method ```aksesFitur()```.
+```php
+//class Dosen
+class Dosen extends Pengguna {
+     // Mengakses fitur dosen dari class Pengguna
+    public function aksesFitur() {
+        echo "Melihat data Dosen<br>";
+    }
+}
+
+
+
+//class Mahasiswa
+class Mahasiswa extends Pengguna{
+    // Method untuk akses fitur
+    public function aksesFitur() {
+        echo "Melihat data Mahasiswa<br>";
+    }
+}
+```
+- class Mahasiswa extends Pengguna: Class Mahasiswa mewarisi class Pengguna.
+    - ```aksesFitur()```: Mengimplementasikan method abstrak ```aksesFitur()``` dari class Pengguna, memberikan fitur yang bisa diakses oleh mahasiswa
+- class Dosen extends Pengguna: Class Dosen mewarisi class Pengguna.
+    - ```aksesFitur()```: Mengimplementasikan method abstrak ```aksesFitur()``` dengan menampilkan fitur yang bisa diakses oleh dosen.
+
+### c. Memanggil metode ```aksesFitur()``` dari objek yang diinstansiasi.
+
+mendemonstrasikan dengan membuat objek dari class Mahasiswa dan Dosen, lalu memanggil method ```aksesFitur()``` untuk masing-masing objek
+```php
+// Instansiasi objek Mahasiswa
+$mahasiswa1 = new Mahasiswa("Arya Wiguna", 230201038, "Teknik Elektro");
+
+// Menampilkan data mahasiswa
+echo "Nama: " . $mahasiswa1->getNama() . "<br>";
+echo "NIM: " . $mahasiswa1->getNim() . "<br>";
+echo "Jurusan: " . $mahasiswa1->getJurusan() . "<br>";
+
+// Mengakses fitur mahasiswa
+$mahasiswa1->aksesFitur();
+
+// Membuat objek Dosen
+$dosen1 = new Dosen("Arya Abu Hurairah", "Matematika");
+
+// Menampilkan nama dosen dan mata kuliah
+echo "<hr>";
+echo "Nama Dosen: " . $dosen1->getNama() . "<br>";
+echo "Mata Kuliah: " . $dosen1->getMataKuliah() . "<br>";
+
+// Mengakses fitur dosen
+$dosen1->aksesFitur();
+```
+- Instansiasi Objek Mahasiswa: Membuat objek mahasiswa1 dengan nama "Arya Wiguna" dan NIM "230201038".
+    - Pemanggilan ```aksesFitur()``` dari Mahasiswa: Method ini akan mencetak fitur yang bisa diakses oleh mahasiswa.
+    - Instansiasi Objek Dosen: Membuat objek dosen1 dengan nama "Arya Abu Hurairah" dan mata kuliah "Matematika".
+    - Pemanggilan ```aksesFitur()``` dari Dosen: Method ini akan mencetak fitur yang bisa diakses oleh dosen.
+
+## Full Code :
 ```php
 <?php 
 // Mendefinisikan class Mahasiswa
@@ -317,9 +400,9 @@ class Mahasiswa extends Pengguna{
 
     // Method untuk akses fitur
 
-    // public function aksesFitur() {
-    //     echo "Melihat data Mahasiswa<br>";
-    // }
+    public function aksesFitur() {
+        echo "Melihat data Mahasiswa<br>";
+    }
 }
 
 // Instansiasi objek Mahasiswa
@@ -377,5 +460,8 @@ echo "Mata Kuliah: " . $dosen1->getMataKuliah() . "<br>";
 $dosen1->aksesFitur();
 ?>
 ```
+
+## Hasil Output:
+![alt text](/src/img/abstraction3-4.png)
 
 
