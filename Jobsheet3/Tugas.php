@@ -1,6 +1,6 @@
 <?php 
 
-class Person{
+abstract class Person1{
     private $name;
 
     public function __construct($name){
@@ -11,15 +11,17 @@ class Person{
         return $this->name;
     }
 
-    public function getRole(){
-        echo "";
+    public function setNama($name){
+        $this->name = $name;
     }
+
+     abstract public function getRole();
 
 }
 
 
 
-class Dosen extends Person{
+class Dosen extends Person1{
     private $nidn;
 
     public function __construct($nidn,$name){
@@ -27,20 +29,21 @@ class Dosen extends Person{
         $this->nidn=$nidn;
     }
 
-    public function getNama(){
-        return $this->name;
+    public function getNidn(){
+        return $this->nidn;
+    }
+
+    public function stNidn($nidn){
+        $this->nidn=$nidn;
     }
 
     public function getRole(){
         echo "Dosen";
     }
 
-    public function setNama($name){
-        $this->name=$name;
-    }
 }
 
-class Mahasiswa extends Person{
+class Mahasiswa extends Person1{
 
     private $nim;
 
@@ -49,8 +52,12 @@ class Mahasiswa extends Person{
         $this->nim = $nim;
     }
 
-    public function getNama(){
-        return $this->name;
+    public function getNim(){
+        return $this->nim;
+    }
+
+    public function setNim($nim){
+        $this->nim = $nim;
     }
 
     public function getRole(){

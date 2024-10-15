@@ -1,7 +1,7 @@
 <?php 
 
 class Person{
-    public $name;
+    protected $name;
 
     public function __construct($name){
         $this->name = $name;
@@ -12,7 +12,7 @@ class Person{
     }
 }
 
-class Struktur extends Person{
+class Student extends Person{
     
     public $studentID;
 
@@ -25,6 +25,6 @@ class Struktur extends Person{
         return $this->studentID;
     }
 }
-$tampil = new Struktur("2332938928","Ibnu Salsah");
+$tampil = new Student("2332938928","Ibnu Salsah");
 echo $tampil->getName()."<br>";
 echo $tampil->getStudentID();
