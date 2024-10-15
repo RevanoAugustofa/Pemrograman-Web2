@@ -1,6 +1,47 @@
-# Jobsheet 3 <hr>
+# Jobsheet 3 
 ## Instruksi Kerja 
  ## 1. Inheritance
+### a. Membuat kelas ```Person``` dengan atribut ```name``` dan ```metode``` ```getName()```.
+```php
+// class Person
+class Person {
+    // Properti 
+    protected $name;  
+
+    // Konstruktor 
+    public function __construct($name) {
+        $this->name = $name;  
+    }
+    // Method getName. 
+    public function getName() {
+        return $this->name;  
+    }
+}
+```
+- Properti protected untuk menyimpan nama. Hanya class ini dan class turunannya yang bisa mengakses properti ini.
+- Konstruktor untuk menginisialisasi properti $name dengan nilai yang diberikan saat objek dibuat.
+- Method getter untuk mengembalikan nilai dari properti ```$name```.
+
+### b. Membuat kelas Student yang mewarisi dari Person dan tambahkan atribut studentID serta metode getStudentID().
+```php
+class Student extends Person {
+     // Properti
+    public $studentID; 
+    // Memanggil konstruktor dari class induk (Person) 
+    public function __construct($studentID, $name) {
+        parent::__construct($name);  
+        $this->studentID = $studentID;
+    }
+    // Method getStudentID()
+    public function getStudentID() {
+        return $this->studentID;  
+    }
+}
+```
+- Properti public untuk menyimpan ID siswa. Ini dapat diakses dari luar class.
+- Memanggil konstruktor dari class induk (Person) untuk menginisialisasi properti ```$name``` dan mengatur properti ```$studentID``` dengan nilai yang diberikan saat objek dibuat.
+- Method ```getStudentID()``` . getter untuk mengembalikan nilai dari properti ```$studentID```.
+## Implementasi :
 ```php
 class Person{
     protected $name;
@@ -35,10 +76,114 @@ echo "ID : ".$tampil->getStudentID();
 ![alt text](/src/img/inheritance5-6.png)
 
  ## 2. Polymorphism
+### a. Buat kelas Teacher yang juga mewarisi dari ```Person``` dan tambahkan atribut teacherID.
+```php
+class Teacher extends Person {
+    public $teacherID; // Properti public untuk menyimpan ID guru
 
+    // constructor
+    public function __construct($name, $teacherID) {
+        parent::__construct($name); // Memanggil konstruktor dari class Person
+        $this->teacherID = $teacherID; // Mengatur ID guru
+    }
+}
+```
+- Class Teacher juga mewarisi dari Person dan menambahkan properti public ```$teacherID```.
+- Konstruktor memanggil konstruktor Person untuk menginisialisasi $name dan mengatur teacherID.
+
+### b. Override metode ```getName()``` di kelas Student dan Teacher untuk menampilkan format berbeda.
+```php
+//class teacher
+class Teacher extends Person {
+    //method getName
+    public function getName() {
+        return "Perkenalkan Saya : " . $this->name; // Mengoverride method getName untuk format berbeda
+    }
+}
+
+//class student
+class Student extends Person {
+  //method getName
+    public function getName() {
+        return "Haii Saya : " . $this->name;  // Override method getName dengan format khusus
+    }
+}
+```
+- Method ```getName()``` pada class ```Teacher``` di-override untuk mengembalikan format berbeda: "Perkenalkan Saya : ...".
+- Method ```getName()``` pada class ```Student```di-override untuk mengembalikan format berbeda: "Haii Saya : ...".
+
+## Implementasi :
+```php
+<?php 
+// class person
+class Person {
+    protected $name;  // Properti protected untuk nama
+
+    //construct
+    public function __construct($name) {
+        $this->name = $name;  // Inisialisasi properti name
+    }
+
+    // method getName
+    public function getName() {
+        return $this->name;  // Mengembalikan nama
+    }
+
+    //method setName
+    public function setName($name) {
+        return $this->name = $name;  // Mengubah nama
+    }
+}
+
+//class student dengan extend class person
+class Student extends Person {
+    private $studentID;  // Properti private untuk ID mahasiswa
+
+    // construct
+    public function __construct($studentID, $name) {
+        parent::__construct($name);  // Memanggil konstruktor Person
+        $this->studentID = $studentID;  // Inisialisasi studentID
+    }
+
+    //method getStudentID
+    public function getStudentID() {
+        return $this->studentID;  // Mengembalikan ID mahasiswa
+    }
+
+    //method getName
+    public function getName() {
+        return "Haii Saya : " . $this->name;  // Override method getName dengan format khusus
+    }
+
+    //method setStudentID
+    public function setStudentID($studentID) {
+        return $this->studentID = $studentID;  // Mengubah studentID
+    }
+}
+
+// class teacher dengan extend class person
+class Teacher extends Person {
+    public $teacherID;  // Properti public untuk ID guru
+
+    //constructor
+    public function __construct($name, $teacherID) {
+        parent::__construct($name);  // Memanggil konstruktor Person
+        $this->teacherID = $teacherID;  // Inisialisasi teacherID
+    }
+
+    //method getName ()
+    public function getName() {
+        return "Perkenalkan Saya : " . $this->name;  // Override method getName dengan format khusus
+    }
+}
+
+```
  ## 3. Encaptulation
-
+ ### a. Mengubah atribut name dan studentID dalam kelas Student menjadi private.
+### b. Tambahkan metode setter dan getter untuk mengakses dan mengubah nilai atribut name dan studentID.
  ## 4. Abstraction 
+ ### a. Buat kelas abstrak Course dengan metode abstrak ```getCourseDetails()```.
+### b. Buat kelas OnlineCourse dan OfflineCourse yang mengimplementasikan ```getCourseDetails()``` untuk memberikan detail yang berbeda.
 
 
 ## TUGAS
